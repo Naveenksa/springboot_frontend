@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<style>
+  h3 {
+    color: rgb(10, 220, 84);
+    text-align: center;
+    font-size: 24px;
+  }
+
+  form {
+    color: rgb(38, 213, 38);
+    background-color: #333;
+    padding: 60px;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: none;
+    background-color: #555;
+    color: yellow;
+  }
+
+  input[type="submit"] {
+    background-color: yellow;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #f2d200;
+  }
+</style>
+
+<h3>Student Details</h3>
+
+<form action="/addstudent" method="post">
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName">
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName">
+
+  <label for="gender">Gender:</label>
+  <input type="text" id="gender" name="gender">
+
+  <label for="dob">Date of Birth:</label>
+  <input type="date" id="dob" name="dob">
+
+  <input type="submit" value="Add">
+</form>
+
+</body>
+</html>

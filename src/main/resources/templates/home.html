@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        /* CSS for the navigation bar */
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+            overflow: hidden;
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        .navbar li a {
+            display: block;
+            color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar li a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<ul class="navbar">
+    <li><a href="/">Home</a></li>
+    <li><a href="/all">Students</a></li>
+    <li><a href="/AddnewStudent">Add Student</a></li>
+    <li><a href="#">Course</a></li>
+</ul>
+</body>
+</html>

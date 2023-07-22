@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Data</title>
+  <!-- Include the jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Student Data</h1>
+<table id="studentTable">
+  <thead>
+  <tr>
+    <th>S_ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>DOB</th>
+  </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<script>
+    function fetchAndDisplayStudentData() {
+
+      $.ajax({
+        url: '/jq',
+        dataType: 'json',
+        success: function(data) {
+         var tbody = $('#studentTable tbody');
+          // Clear the existing table body content before appending new rows
+          tbody.empty();
+          // Iterate through each student record and append it to the table
+          $.each(data, function(index, student) {
+            $('#studentTable tbody').append(`
+              <tr>
+                <td>${student.id}</td>
+                <td>${student.firstName}</td>
+                <td>${student.lastName}</td>
+                <td>${student.gender}</td>
+                 <td>${student.age}</td>
+                 <td>${student.dob}</td>
+              </tr>
+            `);
+          });
+        },
+        error: function() {
+          // Handle error if data retrieval fails
+          alert('Failed to fetch student data.');
+      }
+      });
+    }
+
+    // Call the function initially to load the data
+    fetchAndDisplayStudentData();
+
+    // Call the function every 3 seconds (3000 milliseconds)
+    setInterval(fetchAndDisplayStudentData, 3000);
+
+  </script>
+</body>
+</html>
